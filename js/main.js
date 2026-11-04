@@ -1,4 +1,10 @@
-const md = window.markdownit();
+const md = window.markdownit({
+  highlight(code, lang) {
+    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+    const html = hljs.highlight(code, { language }).value;
+    return `<pre><code class="hljs language-${language}">${html}</code></pre>`;
+  },
+});
 
 const sections = {
   bookshelf: () => `

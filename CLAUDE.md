@@ -7,7 +7,7 @@ Personal micro-blogging site and catalog. Plain static files (HTML, CSS, JS), no
 - `index.html` — page shell: header, nav, empty `<main id="content">`.
 - `js/main.js` — hash router (`#bookshelf`, `#bytes`, `#bytes/<slug>`, `#about`) that renders each section into `<main>`.
 - `css/main.css` — all styles.
-- `blogs/*.md` — blog posts, rendered in the browser with markdown-it (loaded from a CDN).
+- `blogs/*.md` — blog posts, rendered in the browser with markdown-it, with code syntax-highlighted by highlight.js (both loaded from a CDN; the highlight.js theme follows light/dark mode).
 - `blogs/index.json` — manifest of posts; the Bytes card list is built from it.
 
 ## Rules
