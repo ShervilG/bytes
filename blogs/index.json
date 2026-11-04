@@ -1,3 +1,8 @@
 [
-  { "file": "hello-world.md", "title": "Hello, World", "date": "2026-11-05" }
+  {
+    "file": "hello-world.md",
+    "title": "Hello, World",
+    "description": "My first byte: the classic hello world, written in Go.",
+    "date": "2026-11-05"
+  }
 ]

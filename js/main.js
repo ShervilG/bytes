@@ -25,6 +25,14 @@ async function loadPosts() {
 
 const slugOf = (post) => post.file.replace(/\.md$/, '');
 
+const formatDate = (iso) =>
+  new Date(iso).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
+
 async function renderBytes(slug) {
   const posts = await loadPosts();
 
@@ -40,20 +48,28 @@ async function renderBytes(slug) {
     }
   }
 
-  const items = posts
+  const cards = posts
     .map((p) => {
-      const li = document.createElement('li');
       const a = document.createElement('a');
+      a.className = 'card';
       a.href = `#bytes/${slugOf(p)}`;
-      a.textContent = p.title;
+
       const time = document.createElement('time');
-      time.textContent = p.date;
-      li.append(a, ' ', time);
-      return li.outerHTML;
+      time.dateTime = p.date;
+      time.textContent = formatDate(p.date);
+
+      const title = document.createElement('h3');
+      title.textContent = p.title;
+
+      const desc = document.createElement('p');
+      desc.textContent = p.description;
+
+      a.append(time, title, desc);
+      return a.outerHTML;
     })
     .join('');
 
-  return `<h2>Bytes</h2><ul class="post-list">${items}</ul>`;
+  return `<h2>Bytes</h2><div class="card-grid">${cards}</div>`;
 }
 
 async function render() {
