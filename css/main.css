@@ -87,3 +87,30 @@ main {
 main h2 {
   margin-top: 0;
 }
+
+.post-list {
+  padding: 0;
+  list-style: none;
+}
+
+.post-list li {
+  padding: 0.35rem 0;
+}
+
+.post-list time {
+  margin-left: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: #f0f0ea;
+  border-radius: 6px;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+}
