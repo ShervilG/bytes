@@ -75,3 +75,15 @@ a:hover {
   color: var(--accent);
   text-decoration: none;
 }
+
+.site-nav a.active {
+  color: var(--accent);
+}
+
+main {
+  padding-top: 1.5rem;
+}
+
+main h2 {
+  margin-top: 0;
+}
